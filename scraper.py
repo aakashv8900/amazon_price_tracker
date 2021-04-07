@@ -1,32 +1,48 @@
 import requests
 from bs4 import BeautifulSoup
-from selenium import webdriver
+import smtplib
 import time
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
-URL = 'https://www.amazon.in/New-Apple-iPhone-12-128GB/dp/B08L5TNJHG/ref=sr_1_4?dchild=1&keywords=iphone&qid=1617730979&sr=8-4'
+URL = 'https://www.amazon.com/Tracfone-Apple-iPhone-Prepaid-Smartphone/dp/B08CL4CCG2/ref=sr_1_3?dchild=1&keywords=iphone&qid=1617786209&sr=8-3'
+headers = {"User-Agent": 'Mozilla/5.0 (X11; Linux x86_64)', 'Cache-Control': 'no-cache', "Pragma": "no-cache"}
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0'
-}
-driver = webdriver.Firefox(executable_path=r'your\path\geckodriver.exe')
+def price():
+    page = requests.get(URL, headers=headers)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    title = soup.find(id="productTitle").get_text()
+    price = soup.find(id="priceblock_ourprice").get_text()
+    avail = soup.find(id="availability").get_text()
+    converted_price = price[1:-3]
+    converted_price = int(float(converted_price))
 
+    if(converted_price < 195):
+        send_mail()
 
-driver.get(URL)
+    print(title.strip())
+    print(converted_price)
+    print(avail.strip())
 
-time.sleep(5)
+def send_mail():
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.ehlo()
+    server.starttls()
+    server.ehlo()
 
-page = driver.page_source
+    server.login('aakashv.8292@gmail.com', 'uqyqrkresxpodqhs')
+    subject = 'PRICE FELL DOWN!'
+    body = 'Check the amazon link - https://www.amazon.com/Tracfone-Apple-iPhone-Prepaid-Smartphone/dp/B08CL4CCG2/ref=sr_1_3?dchild=1&keywords=iphone&qid=1617786209&sr=8-3'
 
-driver.close()
+    msg = f"Subject: {subject}\n\n{body}"
 
-soup = BeautifulSoup(page, 'html5lib')
-title = soup.find(id="productTitle").text()
-price = soup.find(id="priceblock_ourprice").text()
-converted_price = float(price[0:9])
+    server.sendmail(
+        'aakashv.8292@gmail.com',
+        'aakashv.1238900@gmail.com',
+        msg
+    )
+    print('HEY MAIL HAS BEEN SENT!')
 
-if(converted_price < 85,000):
-    send_mail()
+    server.quit()
 
-print(title.strip())
-print(converted_price)
+while(True):
+    price()
+    time.sleep(86400)

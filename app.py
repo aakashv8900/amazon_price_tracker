@@ -22,7 +22,9 @@ from pymongo import MongoClient
 
 from flask import Flask
 app = Flask(__name__)
+app.config['MONGO_URI'] = 'mongodb+srv://aakashv8900:aakashv8900@cluster0.2r0iu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 cors = CORS(app)
+mongo = PyMongo(app)
 
 @app.route('/',  methods=['GET', 'POST'])
 def home():
@@ -35,12 +37,17 @@ def home():
 def submit():
     if 'name' in request.files:
         name = request.files['name']
+        mongo.save_file(name)
     if 'surl' in request.files:
         surl = request.files['surl']
+        mongo.save_file(surl)
     if 'price' in request.files:
         price = request.files['price']
+        mongo.save_file(price)
     if 'email' in request.files:
         email = request.files['email']
+        mongo.save_file(email)
+    mongo.db.users.insert({'email': request.form.get('email'), 'price': request.form.get('price'), 'surl': request.form.get('surl'), 'name': request.form.get('name')})
     return render_template("submit.html")
 
 if __name__ == "__main__":

@@ -23,8 +23,10 @@ from pymongo import MongoClient
 from flask import Flask
 app = Flask(__name__)
 app.config['MONGO_URI'] = 'mongodb+srv://aakashv8900:aakashv8900@cluster0.2r0iu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-cors = CORS(app)
+app.config['MONGO_DBNAME'] = 'myFirstDatabase'
 mongo = PyMongo(app)
+db = mongo.db
+col = mongo.db["users"]
 
 @app.route('/',  methods=['GET', 'POST'])
 def home():
@@ -35,20 +37,22 @@ def home():
 
 @app.route("/submit", methods=['GET', 'POST'])
 def submit():
-    if 'name' in request.files:
-        name = request.files['name']
-        mongo.save_file(name)
-    if 'surl' in request.files:
-        surl = request.files['surl']
-        mongo.save_file(surl)
-    if 'price' in request.files:
-        price = request.files['price']
-        mongo.save_file(price)
-    if 'email' in request.files:
-        email = request.files['email']
-        mongo.save_file(email)
-    mongo.db.users.insert({'email': request.form.get('email'), 'price': request.form.get('price'), 'surl': request.form.get('surl'), 'name': request.form.get('name')})
+    if request.method == 'POST':
+        if 'name' in request.files:
+            name = request.files['name']
+            col.save_file(name)
+        if 'surl' in request.files:
+            surl = request.files['surl']
+            col.save_file(surl)
+        if 'price' in request.files:
+            price = request.files['price']
+            col.save_file(price)
+        if 'email' in request.files:
+            email = request.files.get['email']
+            col.save_file(email)
+        col.insert_one({'name': request.form.get('name'), 'surl': request.form.get('surl'), 'price': request.form.get('price'), 'email': request.form.get('email')})
     return render_template("submit.html")
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",debug=True)

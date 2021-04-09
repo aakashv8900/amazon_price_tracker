@@ -16,6 +16,8 @@ import json
 import numpy as np
 from flask_wtf import Form, FlaskForm
 from flask_pymongo import PyMongo
+import pymongo
+from pymongo import MongoClient
 
 
 from flask import Flask

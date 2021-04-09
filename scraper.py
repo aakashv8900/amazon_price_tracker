@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import smtplib
 import time
+import pymongo
+from pymongo import MongoClient
 
 URL = 'https://www.amazon.com/Tracfone-Apple-iPhone-Prepaid-Smartphone/dp/B08CL4CCG2/ref=sr_1_3?dchild=1&keywords=iphone&qid=1617786209&sr=8-3'
 headers = {"User-Agent": 'Mozilla/5.0 (X11; Linux x86_64)', 'Cache-Control': 'no-cache', "Pragma": "no-cache"}

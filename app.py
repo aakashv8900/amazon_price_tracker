@@ -31,13 +31,15 @@ def home():
 
 @app.route("/submit", methods=['GET', 'POST'])
 def submit():
-    if request.method == "POST":
-        name = request.form["nm"]
-        surl = request.form["url"]
-        price = request.form["price"]
-        email = request.form["email"]
-        return render_template("submit.html", name=name, surl=surl, price=price, email=email)
-    return render_template("main.html")
+    if 'name' in request.files:
+        name = request.files['name']
+    if 'surl' in request.files:
+        surl = request.files['surl']
+    if 'price' in request.files:
+        price = request.files['price']
+    if 'email' in request.files:
+        email = request.files['email']
+    return render_template("submit.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",debug=True)

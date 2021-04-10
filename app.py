@@ -18,6 +18,7 @@ from flask_wtf import Form, FlaskForm
 from flask_pymongo import PyMongo
 import pymongo
 from pymongo import MongoClient
+from form import SignUpForm
 
 
 from flask import Flask
@@ -37,7 +38,8 @@ def home():
 
 @app.route("/submit", methods=['GET', 'POST'])
 def submit():
-    if request.method == 'POST':
+    form = SignUpForm()
+    if request.method == 'POST' and form.is_submitted():
         if 'name' in request.files:
             name = request.files['name']
             col.save_file(name)

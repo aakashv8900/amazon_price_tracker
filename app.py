@@ -18,7 +18,7 @@ from flask_wtf import Form, FlaskForm
 from flask_pymongo import PyMongo
 import pymongo
 from pymongo import MongoClient
-from form import SignUpForm
+import collections
 
 
 from flask import Flask
@@ -38,8 +38,7 @@ def home():
 
 @app.route("/submit", methods=['GET', 'POST'])
 def submit():
-    form = SignUpForm()
-    if request.method == 'POST' and form.is_submitted():
+    if request.method == 'POST':
         if 'name' in request.files:
             name = request.files['name']
             col.save_file(name)
@@ -50,9 +49,16 @@ def submit():
             price = request.files['price']
             col.save_file(price)
         if 'email' in request.files:
-            email = request.files.get['email']
+            email = request.files['email']
             col.save_file(email)
-        col.insert_one({'name': request.form.get('name'), 'surl': request.form.get('surl'), 'price': request.form.get('price'), 'email': request.form.get('email')})
+        mainname = request.values.get('name')
+        mainsurl = request.values.get('surl')
+        mainprice = request.values.get('price')
+        mainemail = request.values.get('email')
+        str(mainsurl)
+        str(mainprice)
+        str(mainemail)
+        col.insert_one({'name':mainname, 'surl':mainsurl, 'price':mainprice, 'email':mainemail})
     return render_template("submit.html")
 
 

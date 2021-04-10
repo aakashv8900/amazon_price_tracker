@@ -41,24 +41,17 @@ def submit():
     if request.method == 'POST':
         if 'name' in request.files:
             name = request.files['name']
-            col.save_file(name)
         if 'surl' in request.files:
             surl = request.files['surl']
-            col.save_file(surl)
         if 'price' in request.files:
             price = request.files['price']
-            col.save_file(price)
         if 'email' in request.files:
             email = request.files['email']
-            col.save_file(email)
         mainname = request.values.get('name')
         mainsurl = request.values.get('surl')
         mainprice = request.values.get('price')
         mainemail = request.values.get('email')
-        str(mainsurl)
-        str(mainprice)
-        str(mainemail)
-        col.insert_one({'name':mainname, 'surl':mainsurl, 'price':mainprice, 'email':mainemail})
+        col.save({'name':mainname, 'surl':mainsurl, 'price':mainprice, 'email':mainemail})
     return render_template("submit.html")
 
 

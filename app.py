@@ -47,10 +47,10 @@ def submit():
             price = request.files['price']
         if 'email' in request.files:
             email = request.files['email']
-        mainname = request.values.get('name')
-        mainsurl = request.values.get('surl')
-        mainprice = request.values.get('price')
-        mainemail = request.values.get('email')
+        mainname = request.get_data('name')
+        mainsurl = request.get_data('surl')
+        mainprice = request.get_data('price')
+        mainemail = request.get_data('email')
         col.save({'name':mainname, 'surl':mainsurl, 'price':mainprice, 'email':mainemail})
     return render_template("submit.html")
 

@@ -19,6 +19,7 @@ from flask_pymongo import PyMongo
 import pymongo
 from pymongo import MongoClient
 import collections
+from bson.json_util import dumps
 
 
 from flask import Flask
@@ -39,20 +40,13 @@ def home():
 @app.route("/submit", methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
-        if 'name' in request.files:
-            name = request.files['name']
-        if 'surl' in request.files:
-            surl = request.files['surl']
-        if 'price' in request.files:
-            price = request.files['price']
-        if 'email' in request.files:
-            email = request.files['email']
-        mainname = request.get_data('name')
-        mainsurl = request.get_data('surl')
-        mainprice = request.get_data('price')
-        mainemail = request.get_data('email')
-        col.save({'name':mainname, 'surl':mainsurl, 'price':mainprice, 'email':mainemail})
-    return render_template("submit.html")
+        name = request.form.get('name')
+        surl = request.form.get('surl', type=str)
+        price = request.form.get('price', type=int)
+        email = request.form.get('email', type=str)
+            
+        col.insert({'name':name, 'surl':surl, 'price':price, 'email':email})
+        return render_template("submit.html")
 
 
 if __name__ == "__main__":

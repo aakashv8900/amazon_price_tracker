@@ -7,19 +7,12 @@ Created on Fri April 09 08:02:27 2021
 """
 
 import flask
-from flask import Flask, redirect, url_for, request, render_template, send_file, jsonify
-from flask_cors import CORS, cross_origin
-from werkzeug.utils import secure_filename
-from werkzeug.datastructures import FileStorage
+from flask import Flask, redirect, url_for, request, render_template, send_file
 import os
-import json
-import numpy as np
 from flask_wtf import Form, FlaskForm
 from flask_pymongo import PyMongo
 import pymongo
 from pymongo import MongoClient
-import collections
-from bson.json_util import dumps
 
 
 from flask import Flask

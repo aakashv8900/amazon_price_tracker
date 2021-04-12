@@ -16,7 +16,6 @@ colorama==0.4.3
 constantly==15.1.0
 cssselect==1.1.0
 cycler==0.10.0
-dbus-python==1.2.16
 decorator==4.4.2
 distlib==0.3.1
 distro==1.5.0
@@ -62,7 +61,6 @@ mongoengine==0.23.0
 monotonic==1.5
 more-itertools==4.2.0
 motor==2.4.0
-netifaces==0.10.4
 numpy==1.20.2
 oauthlib==3.1.0
 olefile==0.46
@@ -76,8 +74,6 @@ prompt-toolkit==3.0.6
 Protego==0.1.16
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
-pycairo==1.16.2
-pycups==2.0.1
 PyDispatcher==2.0.5
 Pygments==2.3.1
 PyHamcrest==1.9.0

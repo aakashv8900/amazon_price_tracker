@@ -7,9 +7,8 @@ Created on Fri April 09 08:02:27 2021
 """
 
 import flask
-from flask import Flask, redirect, url_for, request, render_template, send_file
+from flask import Flask, url_for, request, render_template
 import os
-from flask_wtf import Form, FlaskForm
 from flask_pymongo import PyMongo
 import pymongo
 from pymongo import MongoClient
@@ -29,17 +28,15 @@ def home():
         return render_template("main.html")
 
     
-
 @app.route("/submit", methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
         name = request.form.get('name')
         surl = request.form.get('surl', type=str)
         price = request.form.get('price', type=int)
-        email = request.form.get('email', type=str)
-            
+        email = request.form.get('email', type=str)   
         col.insert({'name':name, 'surl':surl, 'price':price, 'email':email})
-        return render_template("submit.html")
+        return render_template("submit.html", name=name)
 
 
 if __name__ == "__main__":

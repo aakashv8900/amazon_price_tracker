@@ -5,7 +5,7 @@ WORKDIR /app
 ADD . /app
 
 COPY requirements.txt requirements.txt
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 
 EXPOSE 5000 2222

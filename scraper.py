@@ -61,8 +61,6 @@ for data in alldata:
         )
         server.quit()
 
-    price()
-
-    #while(True):
-    #    price()
-    #    time.sleep(60)
+    while(True):
+        price()
+        time.sleep(60)

@@ -40,7 +40,7 @@ for data in alldata:
             if(converted_price > desired_price):
                 send_mail()
         except:
-            continue
+            pass
 
     def send_mail():
         server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -50,7 +50,7 @@ for data in alldata:
 
         server.login('aakashv.8292@gmail.com', 'uqyqrkresxpodqhs')
         subject = 'PRICE FELL DOWN!'
-        body = 'Check the amazon link - https://www.amazon.com/Tracfone-Apple-iPhone-Prepaid-Smartphone/dp/B08CL4CCG2/ref=sr_1_3?dchild=1&keywords=iphone&qid=1617786209&sr=8-3'
+        body = 'Check the amazon link - ' + URL
 
         msg = f"Subject: {subject}\n\n{body}"
 
@@ -60,7 +60,4 @@ for data in alldata:
             msg
         )
         server.quit()
-
-    while(True):
-        price()
-        time.sleep(60)
+    price()

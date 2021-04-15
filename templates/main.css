@@ -27,9 +27,10 @@ body, html {
 
 #details {
   position: absolute;
-  margin: 5% auto;
+  margin-top: 10%;
+  margin-left: 25%;
   width: 800px;
-  height: 400px;
+  height: 500px;
   background: #FFF;
   padding: 16px;
   border-radius: 2px;
@@ -50,7 +51,8 @@ body, html {
 h1 {
   margin: 0 0 20px 0;
   font-weight: 300;
-  font-size: 28px;
+  font-size: 35px;
+  text-align: center;
 }
 
 input[type="text"],
@@ -107,16 +109,10 @@ input[type="submit"]:active {
 }
 
 .or {
-  position: absolute;
-  top: 180px;
-  left: 280px;
-  width: 40px;
-  height: 40px;
-  background: #DDD;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  line-height: 40px;
-  text-align: center;
+  border-left: 4px solid black;
+  height: 500px;
+  position:absolute;
+  left: 50%;
 }
 
 .right {
@@ -137,7 +133,7 @@ input[type="submit"]:active {
   display: block;
   margin-bottom: 40px;
   font-size: 28px;
-  color: #FFF;
+  color: #1c101f;
   text-align: center;
 }
 

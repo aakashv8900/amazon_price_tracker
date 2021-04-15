@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<div id="details">
+    <div class="left">
+      <h1>Amazon Price Tracker & Notifier</h1>
+
+      <link rel="stylesheet" href="main.css">
+
+      <form action="{{url_for('submit')}}" method="POST">
+        <input type="text" name="name" placeholder="Name" />
+        <input type="url" name="surl" placeholder="URL" />
+        <input type="text" name="price" placeholder="Desired Price" />
+        <input type="email" name="email" placeholder="E-mail" />
+      
+      <input type="submit" value="Submit" />
+    </div>
+    
+    <div class="right">
+      <span class="followme">Follow Us On<br />Social Networks</span>
+      
+      <button class="followme-insta">Instagram</button>
+      <button class="followme-github">Github</button>
+      <button class="followme-kaggle">Kaggle</button>
+    </div>
+    <div class="or">OR</div>
+  </div>

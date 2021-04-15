@@ -12,6 +12,11 @@ body, html {
   color: #222;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  --color-bright: #f2f1c6;
+  --color-orange: #FF6138;
+  --body-background-color: #2c3135;
+  
+  background: var(--body-background-color);
 }
 
 .bg {
@@ -121,34 +126,167 @@ input[type="email"]:focus {
   right: 0;
 }
 
-social-icons {
-  text-align: center;
-  }  
-.social-icons {
-  display:inline;
-  list-style-type:none;
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
-  }
 
-.social-icons a {
-  border-bottom: none;
-  float: right;
-  }
 
-.fa:hover {
-  opacity: 0.7;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#intro {
+  color: var(--color-bright);
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
 }
-.social-icons img {
-  float: ri;
-  width:70px;
-  height:70px;
-  margin-right: 70px;
+
+html, body, #contact-info {
+  width:100%;
+  height:100%;
+}
+
+#contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-info .links {
+  display: flex;
+  min-width: 500px;
+  justify-content: space-between;
+}
+
+#contact-info a {
+  text-decoration: none;
+  color: var(--color-bright);
+  font-size: 2rem;
+}
+
+
+
+/* ****************** */
+/* PREVENTING FLICKERING ON HOVER BECAUSE OF ROTATING AND SKEW TRANSFORMATIONS*/
+#contact-info .links a {
+  display: block;
+  position: relative;
+}
+#contact-info .links a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  transition: all .3s;
+}
+#contact-info .links a:hover::after {
+  /* transform: rotate(35deg) skew(-20deg); */
+  --transformed-box-diagonal-length: 164%;
+  width: var(--transformed-box-diagonal-length);
+  left: calc( (100% - var(--transformed-box-diagonal-length)) / 2 );
+}
+/* ****************** */
+
+
+#contact-info .links a div {
+  position: relative;
+  display: block;
+  width: 55px; 
+  height: 55px;
+  transition: transform .3s;
+}
+
+
+#contact-info .links a:hover div {
+  transform: rotate(-35deg) skew(20deg);
+}
+
+.links a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  /* transition-property: opacity, transform;
+  transition-duration: 0.5s; */
+  border: 1px solid var(--color-bright);
+  /* border-color: var(--color-bright); */
+  border-radius: 5px;
+}
+
+.links a span:nth-child(5) {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  /* border-color: var(--color-bright); */
+}
+
+.links a:hover span:nth-child(5) {
+  transform: translate(20px, -20px);
+  opacity: 1;
+  background-image: url(/home/aakash/Desktop/Github/amazon_price_tracker/templates/insta.png) no-repeat;
+}
+.links a:hover span:nth-child(4) {
+  transform: translate(15px, -15px);
+  opacity: .8;
+  background-image: url(/home/aakash/Desktop/Github/amazon_price_tracker/templates/kaggle.png) no-repeat;
+}
+.links a:hover span:nth-child(3) {
+  transform: translate(10px, -10px);
+  opacity: .6;
+  background-image: url(/home/aakash/Desktop/Github/amazon_price_tracker/templates/gmail.png) no-repeat;
+}
+.links a:hover span:nth-child(2) {
+  transform: translate(5px, -5px);
+  opacity: .4;
+  background-image: url(/home/aakash/Desktop/Github/amazon_price_tracker/templates/git.png) no-repeat;
+}
+.links a:hover span:nth-child(1) {
+  opacity: .2;
+  background-image: url(/home/aakash/Desktop/Github/amazon_price_tracker/templates/link.png) no-repeat;
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block; /* remove extra space below image */
+}
+
+/* orange background spans */
+.links a.orange-background span {
+  background: var(--color-orange);
+  border-color: var(--color-bright);
+}
+.links a.orange-background span:nth-child(5) {
+  background: var(--body-background-color);
+}
+
+
+/* orange shadow */
+.links a.orange-shadow:hover span {
+  box-shadow: -1px 1px 3px var(--color-orange);
+}
+
+/* orange border  */
+.links a.orange-border span {
+  border-color: var(--color-orange);
+}
+.links a.orange-border span:nth-child(5) {
+  border-color: var(--color-bright);
 }

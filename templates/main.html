@@ -1,25 +1,79 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<div class="bg">
+  <div id="details">
+      <div class="main">
         <h1>Amazon Price Tracker & Notifier</h1>
-        <style>
-            h1 {text-align: center;}
-        </style>
-    </head>
-    <body>
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css')}}">
+
         <form action="{{url_for('submit')}}" method="POST">
-            <p>Enter Name:</p>
-                <p><input type = "text" name = "name" /></p>
-            <p>Product URL:</p>
-                <p><input type = "url" name = "surl" /></p>
-            <p>Desired Price:</p>
-                <p><input type = "text" name = "price" /></p>
-            <p>Email Address:</p>
-                <p><input type = "email" name = "email" /></p>
-            <p><button type = "submit" value = "submit">Submit</button></p>
-            <style>
-                p {text-align: center;}
-            </style>
+          <input type="text" name="name" placeholder="Name" />
+          <input type="url" name="surl" placeholder="URL" />
+          <input type="text" name="price" placeholder="Desired Price" />
+          <input type="email" name="email" placeholder="E-mail" />
+        
+        <button class="button" type="submit" value="Submit"><span>Submit</span></button>
         </form>
-    </body>
-</html>
+        <div id='contact-info'>
+          <div class='links'>
+            <a href='https://www.linkedin.com/in/heyaakash/' target='_blank' class='orange-border'>
+              <div>
+                <span><img src="{{ url_for('static',filename='images/link.png')}}"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span>
+                      <i class="fab fa-linkedin-in"></i>
+                    </span>
+              </div>
+            </a>
+            <a href='https://github.com/aakashv8900' target='_blank' class='orange-border' >
+              <div>
+                <span><img src="{{ url_for('static',filename='images/git.png')}}"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span>
+                      <i class="fab fa-github"></i>
+                    </span>
+      
+              </div>
+            </a>
+            <a href='aakashv.8292@gmail.com' class='orange-border' target='_blank'>
+              <div>
+                <span><img src="{{ url_for('static',filename='images/gmail.png')}}"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span>
+                      <i class="fab fa-gmail"></i>
+                    </span>
+              </div>
+            </a>
+            <a href='https://github.com/aakashv8900' class='orange-border' target='_blank'>
+              <div>
+                <span><img src="{{ url_for('static',filename='images/kaggle.png')}}"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span>
+                      <i class="fab fa-kaggle"></i>
+                    </span>
+              </div>
+            </a>
+            <a href='https://www.instagram.com/iamtheparty._/' class='orange-border' target='_blank'>
+              <div>
+                <span><img src="{{ url_for('static',filename='images/insta.png')}}"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span>
+                      <i class="fab fa-instagram"></i>
+                    </span>
+              </div>
+            </a>
+          </div>
+          </div>
+      </div>
+    </div>
+</div>

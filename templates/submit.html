@@ -3,15 +3,78 @@
     <head>
         <h1>Amazon Price Tracker & Notifier</h1>
         <style>
-          h1 {text-align: center;}
+          h1 {text-align: center;
+          color: white;}
         </style>
     </head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='submit.css')}}">
   <body>
     <h2>Mr./Miss {{name}}</h2>
     <p>Thank you for using Amazon Price Tracker & Notifier.</p>
     <style>
-      h2 {text-align: center;}
-      p {text-align: center;}
+      h2 {text-align: center;
+      color: white;}
+      p {text-align: center;
+      color: white;}
     </style>
+    <div id='contact-info'>
+      <div class='links'>
+        <a href='https://www.linkedin.com/in/heyaakash/' target='_blank' class='orange-border'>
+          <div>
+            <span><img src="{{ url_for('static',filename='images/link.png')}}"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>
+                  <i class="fab fa-linkedin-in"></i>
+                </span>
+          </div>
+        </a>
+        <a href='https://github.com/aakashv8900' target='_blank' class='orange-border' >
+          <div>
+            <span><img src="{{ url_for('static',filename='images/git.png')}}"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>
+                  <i class="fab fa-github"></i>
+                </span>
+  
+          </div>
+        </a>
+        <a href='aakashv.8292@gmail.com' class='orange-border' target='_blank'>
+          <div>
+            <span><img src="{{ url_for('static',filename='images/gmail.png')}}"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>
+                  <i class="fab fa-gmail"></i>
+                </span>
+          </div>
+        </a>
+        <a href='https://github.com/aakashv8900' class='orange-border' target='_blank'>
+          <div>
+            <span><img src="{{ url_for('static',filename='images/kaggle.png')}}"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>
+                  <i class="fab fa-kaggle"></i>
+                </span>
+          </div>
+        </a>
+        <a href='https://www.instagram.com/iamtheparty._/' class='orange-border' target='_blank'>
+          <div>
+            <span><img src="{{ url_for('static',filename='images/insta.png')}}"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>
+                  <i class="fab fa-instagram"></i>
+                </span>
+          </div>
+        </a>
+      </div>
   </body>
 </html>

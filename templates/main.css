@@ -3,7 +3,7 @@
   outline: none;
 }
 
-body {
+body, html {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@ body {
 }
 
 .bg {
-  background-image: url("https://q3p9g6n2.rocketcdn.me/wp-content/ml-loads/2014/08/amazon-orange-paint-1920.png");
+  background-image: url("img_nature.jpg");
 
   height: 100%; 
 
@@ -24,18 +24,20 @@ body {
   background-size: cover;
 }
 
+
 #details {
-  position: relative;
+  position: absolute;
   margin: 5% auto;
-  width: 600px;
+  width: 800px;
   height: 400px;
   background: #FFF;
+  padding: 16px;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  background-color: whitesmoke;
 }
 
 .left {
-  height: 50%;
   position: absolute;
   top: 0;
   left: 0;
@@ -118,7 +120,6 @@ input[type="submit"]:active {
 }
 
 .right {
-  height: 50%;
   position: absolute;
   top: 0;
   right: 0;
@@ -160,18 +161,19 @@ button.social-signin:focus {
 }
 
 button.followme:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   transition: 0.2s ease;
 }
 
 button.followme-insta {
-  background: #32508E;
+  background: #d81515;
 }
 
 button.followme-github {
-  background: #55ACEE;
+  background: #1c101f;
+  caret-color: whitesmoke;
 }
 
 button.followme-kaggle {
-  background: #DD4B39;
+  background: #4939dd;
 }

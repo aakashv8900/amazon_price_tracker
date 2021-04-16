@@ -10,7 +10,7 @@ body, html {
     --color-bright: #f2f1c6;
     --color-orange: #FF6138;
     --body-background-color: #2c3135;
-    top: -90%;
+    top: 0;
     left: 0;
     
     background: var(--body-background-color);

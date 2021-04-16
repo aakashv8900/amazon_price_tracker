@@ -60,4 +60,6 @@ for data in alldata:
             msg
         )
         server.quit()
+while(True):
     price()
+    time.sleep(60)

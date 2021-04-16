@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <title>Amazon Price Tracker & Notifier</title>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static',filename='main.css')}}">
+  <style>
+    body,h1,h2{font-family: "Raleway", sans-serif}
+    body, html {height: 100%}
+    p {line-height: 2}
+    body {background-image: url("{{ url_for('static',filename='images/forestbridge.jpg')}}");
+      min-height: 100%;
+      background-position: center;
+      background-size: cover;}
+    .button:hover span {
+      padding-right: 0px;
+      transform: scale(1.1);
+      transition: all .3s;
+      } 
+    </style>
+</head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="bgimg">
   <div id="details">
       <div class="main">
         <h1>Amazon Price Tracker & Notifier</h1>
-        <style>
-          body,h1,h2{font-family: "Raleway", sans-serif}
-          body, html {height: 100%}
-          p {line-height: 2}
-          .bgimg {
-            min-height: 100%;
-            background-position: center;
-            background-size: cover;
-          }
-          .bgimg {background-image: url("{{ url_for('static',filename='images/forestbridge.jpg')}}")}
-          </style>
-
-        <link rel="stylesheet" href="{{ url_for('static',filename='main.css')}}">
+        
 
         <form action="{{url_for('submit')}}" method="POST">
           <input type="text" name="name" placeholder="Name" />
-          <input type="url" name="surl" placeholder="URL" />
+          <input type="url" name="surl" placeholder="Product URL" />
           <input type="text" name="price" placeholder="Desired Price" />
           <input type="email" name="email" placeholder="E-mail" />
         

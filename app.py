@@ -22,8 +22,12 @@ mongo = PyMongo(app)
 db = mongo.db
 col = mongo.db["users"]
 
-@app.route('/',  methods=['GET', 'POST'])
+@app.route("/")
 def home():
+    return render_template("home.html")
+
+@app.route('/form',  methods=['GET', 'POST'])
+def form():
     if request.method == "GET":
         return render_template("main.html")
 

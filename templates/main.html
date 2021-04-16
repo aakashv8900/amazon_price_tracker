@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <title>Amazon Price Tracker & Notifier</title>
-<div class="bg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="bgimg">
   <div id="details">
       <div class="main">
         <h1>Amazon Price Tracker & Notifier</h1>
+        <style>
+          body,h1,h2{font-family: "Raleway", sans-serif}
+          body, html {height: 100%}
+          p {line-height: 2}
+          .bgimg {
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+          }
+          .bgimg {background-image: url("{{ url_for('static',filename='images/forestbridge.jpg')}}")}
+          </style>
 
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='main.css')}}">
 
         <form action="{{url_for('submit')}}" method="POST">
           <input type="text" name="name" placeholder="Name" />
@@ -15,6 +28,7 @@
         
         <button class="button" type="submit" value="Submit"><span>Submit</span></button>
         </form>
+        <footer class="w3-center"><span>My Social Media Handle's ❤️</span>
         <div id='contact-info'>
           <div class='links'>
             <a href='https://www.linkedin.com/in/heyaakash/' target='_blank' class='orange-border'>
@@ -74,6 +88,8 @@
               </div>
             </a>
           </div>
+        </footer>
+          <div class="w3-hide-small" style="margin-bottom:32px"> </div>
           </div>
       </div>
     </div>

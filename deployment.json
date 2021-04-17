@@ -1,0 +1,128 @@
+{
+  "id": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourceGroups/AmazonPriceTrackerNotifier/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-a156250a-85bf",
+  "name": "Microsoft.Web-WebApp-Portal-a156250a-85bf",
+  "type": "Microsoft.Resources/deployments",
+  "tags": {
+    "primaryResourceId": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourcegroups/AmazonPriceTrackerNotifier/providers/Microsoft.Web/sites/amazonpricetrackernotifier",
+    "marketplaceItemId": "Microsoft.WebSite",
+    "provisioningHash": "customize-post-provisioning-steps-webapp-deployment"
+  },
+  "properties": {
+    "templateHash": "15105720416440508720",
+    "parameters": {
+      "subscriptionId": {
+        "type": "String",
+        "value": "0bb6cb02-07e0-42cc-99a8-b17918ffb6f8"
+      },
+      "name": {
+        "type": "String",
+        "value": "amazonpricetrackernotifier"
+      },
+      "location": {
+        "type": "String",
+        "value": "West US"
+      },
+      "hostingPlanName": {
+        "type": "String",
+        "value": "ASP-AmazonPriceTrackerNotifier-bf4d"
+      },
+      "serverFarmResourceGroup": {
+        "type": "String",
+        "value": "AmazonPriceTrackerNotifier"
+      },
+      "alwaysOn": {
+        "type": "Bool",
+        "value": false
+      },
+      "sku": {
+        "type": "String",
+        "value": "Basic"
+      },
+      "skuCode": {
+        "type": "String",
+        "value": "B1"
+      },
+      "workerSize": {
+        "type": "String",
+        "value": "0"
+      },
+      "workerSizeId": {
+        "type": "String",
+        "value": "0"
+      },
+      "numberOfWorkers": {
+        "type": "String",
+        "value": "1"
+      },
+      "linuxFxVersion": {
+        "type": "String",
+        "value": "DOCKER|aakashv8900/amazon_price_tracker:latest"
+      },
+      "dockerRegistryUrl": {
+        "type": "String",
+        "value": "https://index.docker.io"
+      },
+      "dockerRegistryUsername": {
+        "type": "String",
+        "value": ""
+      },
+      "dockerRegistryPassword": {
+        "type": "SecureString"
+      },
+      "dockerRegistryStartupCommand": {
+        "type": "String",
+        "value": ""
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "None"
+    },
+    "provisioningState": "Succeeded",
+    "timestamp": "2021-04-12T11:34:15.050859Z",
+    "duration": "PT52.923261S",
+    "correlationId": "f46bc29e-de1d-4939-ad77-7b2d8a3688b6",
+    "providers": [
+      {
+        "namespace": "Microsoft.Web",
+        "resourceTypes": [
+          {
+            "resourceType": "sites",
+            "locations": [
+              "westus"
+            ]
+          },
+          {
+            "resourceType": "serverfarms",
+            "locations": [
+              "westus"
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourceGroups/AmazonPriceTrackerNotifier/providers/Microsoft.Web/serverfarms/ASP-AmazonPriceTrackerNotifier-bf4d",
+            "resourceType": "Microsoft.Web/serverfarms",
+            "resourceName": "ASP-AmazonPriceTrackerNotifier-bf4d"
+          }
+        ],
+        "id": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourceGroups/AmazonPriceTrackerNotifier/providers/Microsoft.Web/sites/amazonpricetrackernotifier",
+        "resourceType": "Microsoft.Web/sites",
+        "resourceName": "amazonpricetrackernotifier"
+      }
+    ],
+    "outputResources": [
+      {
+        "id": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourceGroups/AmazonPriceTrackerNotifier/providers/Microsoft.Web/serverfarms/ASP-AmazonPriceTrackerNotifier-bf4d"
+      },
+      {
+        "id": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourceGroups/AmazonPriceTrackerNotifier/providers/Microsoft.Web/sites/amazonpricetrackernotifier"
+      }
+    ],
+    "validationLevel": "Template"
+  }
+}

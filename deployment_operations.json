@@ -1,0 +1,50 @@
+[
+  {
+    "id": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourceGroups/AmazonPriceTrackerNotifier/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-a156250a-85bf/operations/FF17DBAE60ED5353",
+    "operationId": "FF17DBAE60ED5353",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-04-12T11:34:14.6638785Z",
+      "duration": "PT47.1249597S",
+      "trackingId": "fb4bc6f0-d4cc-4d60-b986-6af7143e9f75",
+      "serviceRequestId": "0b1022de-4660-4ac0-a277-d3dc1bdce374",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourceGroups/AmazonPriceTrackerNotifier/providers/Microsoft.Web/sites/amazonpricetrackernotifier",
+        "resourceType": "Microsoft.Web/sites",
+        "resourceName": "amazonpricetrackernotifier"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourceGroups/AmazonPriceTrackerNotifier/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-a156250a-85bf/operations/96A102A429A65E40",
+    "operationId": "96A102A429A65E40",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-04-12T11:33:52.7143387Z",
+      "duration": "PT25.1754199S",
+      "trackingId": "3f19fdae-4e8d-411b-9d82-b86cc94380d2",
+      "serviceRequestId": "4eeb1dfd-4913-4c73-be81-bd3eddf87c18",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourceGroups/AmazonPriceTrackerNotifier/providers/Microsoft.Web/serverfarms/ASP-AmazonPriceTrackerNotifier-bf4d",
+        "resourceType": "Microsoft.Web/serverfarms",
+        "resourceName": "ASP-AmazonPriceTrackerNotifier-bf4d"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/0bb6cb02-07e0-42cc-99a8-b17918ffb6f8/resourceGroups/AmazonPriceTrackerNotifier/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-a156250a-85bf/operations/08585833796833500488",
+    "operationId": "08585833796833500488",
+    "properties": {
+      "provisioningOperation": "EvaluateDeploymentOutput",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-04-12T11:34:14.954602Z",
+      "duration": "PT47.4156832S",
+      "trackingId": "ce42895d-d4cd-4629-aacd-2135d7db38d5",
+      "statusCode": "OK"
+    }
+  }
+]

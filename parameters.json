@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "0bb6cb02-07e0-42cc-99a8-b17918ffb6f8"
+        },
+        "name": {
+            "value": "amazonpricetrackernotifier"
+        },
+        "location": {
+            "value": "West US"
+        },
+        "hostingPlanName": {
+            "value": "ASP-AmazonPriceTrackerNotifier-b9ce"
+        },
+        "serverFarmResourceGroup": {
+            "value": "AmazonPriceTrackerNotifier"
+        },
+        "alwaysOn": {
+            "value": false
+        },
+        "sku": {
+            "value": "Basic"
+        },
+        "skuCode": {
+            "value": "B1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "linuxFxVersion": {
+            "value": "DOCKER|aakashv8900/amazon_price_tracker:latest"
+        },
+        "dockerRegistryUrl": {
+            "value": "https://index.docker.io"
+        },
+        "dockerRegistryUsername": {
+            "value": ""
+        },
+        "dockerRegistryPassword": {
+            "value": null
+        },
+        "dockerRegistryStartupCommand": {
+            "value": ""
+        }
+    }
+}

@@ -52,7 +52,9 @@ input[type="url"],
 input[type="email"] {
   display: inline-block;
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  top: 60px;
   padding: 20px;
   width: 220px;
   height: 42px;
@@ -80,7 +82,9 @@ input[type="email"]:focus {
   border: none;
   color: whitesmoke;
   text-align: center;
+  position: relative;
   font-size: 28px;
+  top: 100px;
   padding: 20px;
   width: 200px;
   transition: all 0.5s;

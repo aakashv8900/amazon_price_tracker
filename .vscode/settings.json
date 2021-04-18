@@ -11,5 +11,6 @@
     "python.testing.unittestEnabled": false,
     "python.testing.pytestArgs": [
         "test"
-    ]
+    ],
+    "python.pythonPath": "/usr/bin/python3"
 }

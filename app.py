@@ -7,7 +7,7 @@ Created on Fri April 09 08:02:27 2021
 """
 
 import flask
-from flask import Flask, url_for, request, render_template
+from flask import Flask, url_for, request, render_template, jsonify
 import os
 from flask_pymongo import PyMongo
 import pymongo
@@ -16,6 +16,7 @@ from pymongo import MongoClient
 
 from flask import Flask
 app = Flask(__name__)
+app.testing = True
 app.config['MONGO_URI'] = 'mongodb+srv://aakashv8900:aakashv8900@cluster0.2r0iu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 app.config['MONGO_DBNAME'] = 'myFirstDatabase'
 mongo = PyMongo(app)

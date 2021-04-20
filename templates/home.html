@@ -3,7 +3,7 @@
 <title>Amazon Price Tracker & Notifier</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{ url_for('static',filename='home.css')}}">
+<link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
 body,h1,h2{font-family: "Raleway", sans-serif}
@@ -36,10 +36,40 @@ p {line-height: 2}
   </div>
 </div>
 
+<div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min" id="us">
+  <div class="w3-content">
+    <h1 class="w3-center w3-text-grey"><b>Technologies Used </b></h1>
+    <div class="item">
+    <p>
+  <style>img {
+    float: left; 
+    margin: 0px 0px 25px 25px;
+  }
+  span {
+    float: left;
+    margin: 30px 25px 0px 0px;
+  }
+  </style>
+      <img src="python.svg" width="60px"><span>Python</span>
+      <img src="docker.svg" width="60px"><span>Docker</span>
+      <img src="mongodb.svg" width="60px"><span>MongoDB</span>
+      <img src="flask.svg" width="60px"><span>Flask</span>
+      <img src="azure.svg" width="60px"><span>Azure</span>
+      <img src="travisci.svg" width="60px"><span>TravisCI</span>
+      <img src="beauti.jpeg" width="60px"><span>BeautifulSoup</span>
+      <img src="html.svg" width="60px"><span>HTML</span>
+      <img src="css.svg" width="60px"><span>CSS</span>
+      <img src="requests.png" width="60px"><span>Requests</span>
+      <img src="smtp.png" width="60px"><span>SMTPlib Python</span>
+    </p>
+  </div>
+  </div>
+</div>
+
 <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="wedding">
   <div class="w3-content">
     <h1 class="w3-center w3-text-grey"><b>About Me</b></h1>
-    <img class="w3-round w3-grayscale-min" src="{{ url_for('static',filename='images/aakash.jpeg')}}" style="width:100%;margin:32px 0">
+    <img class="w3-round w3-grayscale-min" src="{{ url_for('static',filename='images/aakash.jpeg')}}" style="width:50%;margin: 64px 250px">
     <h2>Aakash Verma</h2>
     <p><i>Hello! I am a Self-taught programmer and BCA Junior Year (2nd year) Student from India!<br> I currently rank under the top 1600 out of more than 160,000 competitors.<br> A fast learner and hard worker who never looses from himself and always wants to seek new opportunities to learn more and more. Also a social worker.</i>
     </p><br>
@@ -49,7 +79,7 @@ p {line-height: 2}
 </div>
 
 
-<footer class="w3-center w3-black w3-padding-16"><span>You can reach out to me on:</span>
+<footer class="w3-center w3-black w3-padding-16"><h3>You can reach out to me on:</h3>
     <div id='contact-info'>
         <div class='links'>
           <a href='https://www.linkedin.com/in/heyaakash/' target='_blank' class='orange-border'>

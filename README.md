@@ -33,7 +33,7 @@ In the backend, the project keep checking the product price in realtime and when
 
 ---
 
-# 📤 Deployed on [![Deploy to Azure](https://aka.ms/deploytoazurebutton "Deploy to Azure")](https://amazonpricetrackernotifier.azurewebsites.net/)
+# 📤 Deployed on [![Deployed to Azure](https://aka.ms/deploytoazurebutton "Deployed to Azure")](https://amazonpricetrackernotifier.azurewebsites.net/)
 
 ---
 

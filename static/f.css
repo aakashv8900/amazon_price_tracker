@@ -3,67 +3,117 @@
   outline: none;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: black;
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #DDD;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  --color-bright: #4d4c4a;
+  --color-orange: #FF6138;
+  --body-background-color: #2c3135;
 }
 
-* {
-  box-sizing: border-box;
-}
 
-/* Add padding to containers */
-.container {
+#details {
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 25%;
+  width: 700px;
+  height: 600px;
+  background: #FFF;
   padding: 16px;
-  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  background-color: whitesmoke;
 }
 
-/* Full-width input fields */
-input[type=text], input[type=url], input[type=email] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Overwrite default styles of hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for the submit button */
-.registerbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity: 1;
-}
-
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
+.main {
+  position: absolute;
   text-align: center;
+  top: 0;
+  left: 10%;
+  box-sizing: border-box;
+  padding: 50px 20px;
+  width: 600px;
+  height: 200px;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-size: 45px;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="email"] {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+  position: relative;
+  top: 60px;
+  padding: 20px;
+  width: 220px;
+  height: 42px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="email"]:focus {
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #16a085;
+  border: none;
+  color: whitesmoke;
+  text-align: center;
+  position: relative;
+  font-size: 28px;
+  top: 100px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-bottom: auto;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+
+.button:hover span:after {
+  --transformed-box-diagonal-length: 164%;
+  width: var(--transformed-box-diagonal-length);
+  left: calc( (100% - var(--transformed-box-diagonal-length)) / 2 );
 }
 
 html, body, #contact-info {

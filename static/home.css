@@ -1986,8 +1986,9 @@ body, html {
   
   #contact-info .links {
     display: flex;
-    min-width: 500px;
-    justify-content: space-between;
+    min-width: 500%;
+    justify-content: center;
+	align-content: center;
   }
   
   #contact-info a {
@@ -2023,8 +2024,8 @@ body, html {
   #contact-info .links a div {
     position: relative;
     display: block;
-    width: 55px; 
-    height: 55px;
+    width: 55%; 
+    height: 55%;
     transition: transform .3s;
   }
   

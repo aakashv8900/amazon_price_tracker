@@ -39,7 +39,7 @@ for data in alldata:
                 
             if(converted_price > desired_price):
                 send_mail()
-                col.delete_one(reciever)
+                col.delete_one(reciever) 
         except:
             pass
 

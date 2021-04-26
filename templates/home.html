@@ -57,37 +57,139 @@ p {line-height: 2}
 <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min" id="us">
   <div class="w3-content">
     <h1 class="w3-center w3-text-grey"><b>Technologies Used </b></h1>
-    <div class="item">
-    <p>
-  <style> .item img {
-    float: left; 
-    margin: 0px 0px 25px 25px;
-  }
-  span {
-    float: left;
-    margin: 30px 25px 0px 0px;
-  }
-  </style>
-      <img src="{{ url_for('static',filename='images/python.svg')}}" width="60px"><span>Python</span>
-      <img src="{{ url_for('static',filename='images/docker.svg')}}" width="60px"><span>Docker</span>
-      <img src="{{ url_for('static',filename='images/mongodb.svg')}}" width="60px"><span>MongoDB</span>
-      <img src="{{ url_for('static',filename='images/flask.svg')}}" width="60px"><span>Flask</span>
-      <img src="{{ url_for('static',filename='images/azure.svg')}}" width="60px"><span>Azure</span>
-      <img src="{{ url_for('static',filename='images/travisci.svg')}}" width="60px"><span>TravisCI</span>
-      <img src="{{ url_for('static',filename='images/beauti.jpeg')}}" width="60px"><span>BeautifulSoup</span>
-      <img src="{{ url_for('static',filename='images/html.svg')}}" width="60px"><span>HTML</span>
-      <img src="{{ url_for('static',filename='images/css.svg')}}" width="60px"><span>CSS</span>
-      <img src="{{ url_for('static',filename='images/requests.png')}}" width="60px"><span>Requests</span>
-      <img src="{{ url_for('static',filename='images/smtp.png')}}" width="60px"><span>SMTPlib Python</span>
-    </p>
+    <style>
+      div.gallery {
+        border: 1px solid #ccc;
+      }
+      
+      div.gallery:hover {
+        border: 1px solid #777;
+      }
+      
+      div.gallery img {
+        width: 100%;
+        height: auto;
+      }
+      
+      div.desc {
+        padding: 15px;
+        text-align: center;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+      }
+      
+      @media only screen and (max-width: 700px) {
+        .responsive {
+          width: 49.99999%;
+          margin: 6px 0;
+        }
+      }
+      
+      @media only screen and (max-width: 500px) {
+        .responsive {
+          width: 25%;
+        }
+      }
+      
+      .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      </style>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/python.svg')}}" alt="Python" width="300" height="200">
+    <div class="desc">Python</div>
   </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/docker.svg')}}" alt="Docker" width="300" height="200">
+    <div class="desc">Docker</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/mongodb.svg')}}" alt="MongoDB" width="300" height="200">
+    <div class="desc">MongoDB</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/flask.svg')}}" alt="Flask" width="300" height="200">
+    <div class="desc">Flask</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/azure.svg')}}" alt="Azure" width="300" height="200">
+    <div class="desc">Azure</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/travisci.svg')}}" alt="TravisCI" width="300" height="200">
+    <div class="desc">TravisCI</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/beauti.jpeg')}}" alt="BeautifulSoup" width="300" height="200">
+    <div class="desc">BeautifulSoup</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/html.svg')}}" alt="HTML" width="300" height="200">
+    <div class="desc">HTML</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/css.svg')}}" alt="CSS" width="300" height="200">
+    <div class="desc">CSS</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/requests.png')}}" alt="Requests" width="300" height="200">
+    <div class="desc">Requests</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="{{ url_for('static',filename='images/smtp.png')}}" alt="SMTPlib Python" width="300" height="200">
+    <div class="desc">SMTPlib Python</div>
+  </div>
+</div>
+
   </div>
 </div>
 
 <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="wedding">
   <div class="w3-content">
     <h1 class="w3-center w3-text-grey"><b>About Me</b></h1>
-    <img class="w3-round w3-grayscale-min" src="{{ url_for('static',filename='images/aakash.jpeg')}}" style="width:50%;margin: 64px 250px">
+    <img class="w3-round w3-grayscale-min" src="{{ url_for('static',filename='images/aakash.jpeg')}}" style="max-width: 100%;height: auto;margin: 64px 250px">
     <h2>Aakash Verma</h2>
     <p><i>Hello! I am a Self-taught programmer and BCA Junior Year (2nd year) Student from India!<br> I currently rank under the top 1600 out of more than 160,000 competitors.<br> A fast learner and hard worker who never looses from himself and always wants to seek new opportunities to learn more and more. Also a social worker.</i>
     </p><br>

@@ -8,19 +8,14 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5024088553806960"
      crossorigin="anonymous"></script>
   <style>
-    body,h1,h2{font-family: "Raleway", sans-serif}
-    body, html {height: 100%}
-    p {line-height: 2}
-    body {background-image: url("{{ url_for('static',filename='images/main.gif')}}");
-      min-height: 100%;
-      background-position: center;
-      background-size: cover;}
-    .button:hover span {
-      padding-right: 0px;
-      transform: scale(1.1);
-      transition: all .3s;
-      } 
-    </style>
+    body, html {height: 100%;
+  background-image: url("{{ url_for('static',filename='images/main.gif')}}");
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+  </style>
 </head>
 <body>
 <form action="{{url_for('submit')}}" method="POST">

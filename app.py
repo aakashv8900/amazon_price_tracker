@@ -29,7 +29,7 @@ def home():
 @app.route('/form',  methods=['GET', 'POST'])
 def form():
     if request.method == "GET":
-        return render_template("main.html")
+        return render_template("index.html")
 
     
 @app.route("/submit", methods=['GET', 'POST'])

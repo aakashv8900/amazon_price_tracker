@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Amazon Price Tracker & Notifier</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5024088553806960"
+     crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <style>
+		.imgjs-fullheight {background-image: url("{{ url_for('static',filename='images/graph.gif')}}")} 
+	</style>
+	</head>
+	<body class="imgjs-fullheight">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Amazon Price Tracker & Notifier</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center"></h3>
+		      	<form action="{{url_for('submit')}}" method="POST" class="signin-form">
+		      		<div class="form-group">
+		      			<input type="text" class="form-control" placeholder="Name" name="name" required>
+		      		</div>
+				    <div class="form-group">
+						<input type="url" class="form-control" placeholder="Product URL" name="surl" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Desired Price" name="price" required>
+					</div>
+					<div class="form-group">
+						<input type="email" class="form-control" placeholder="E-Mail" name="email" required>
+					</div>
+	            <div class="form-group">
+	            	<button type="submit" value="Submit" class="form-control btn btn-primary submit px-3">Submit</button>
+	            </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	</body>
+</html>
+

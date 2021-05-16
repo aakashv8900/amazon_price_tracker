@@ -5,7 +5,7 @@
 <p align="center">Your Personal Desired Price Alert Notifier!</p>
 </p>
 
-<p  align="center"><img src="amazon.jpg" width="50%" ></p>
+<p  align="center"><img src="amazon1.jpg" width="50%" ></p>
 
 # Usage :
 

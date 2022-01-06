@@ -9,7 +9,7 @@
 
 # Usage :
 
-Hey! For using this project. Go [`here.`](https://amazonpricetrackernotifier.azurewebsites.net/)
+Hey! For using this project. Go [`here.`](https://amazonpricetrackernoti.azurewebsites.net/)
 By tapping on this, a flask web app will open, where the project asks you for your `Name`, `Product URL`(of which you want the notification), `Desired Price`(price on which you want a notification), `Email Address`(your email on which you want to receive the notification). 
 
 In the backend, the project keep checking the product price in realtime and whenever the product realtime price and your Desired Price meet. It notify you on your respective Email Address.
@@ -33,7 +33,7 @@ In the backend, the project keep checking the product price in realtime and when
 
 ---
 
-# 📤 Deployed on [![Deployed to Azure](https://aka.ms/deploytoazurebutton "Deployed to Azure")](https://amazonpricetrackernotifier.azurewebsites.net/)
+# 📤 Deployed on [![Deployed to Azure](https://aka.ms/deploytoazurebutton "Deployed to Azure")](https://amazonpricetrackernoti.azurewebsites.net/)
 
 ---
 

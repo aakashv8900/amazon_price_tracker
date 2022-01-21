@@ -14,7 +14,7 @@ import pymongo
 from pymongo import MongoClient
 
 
-mongo = MongoClient("mongodb+srv://aakashv8900:aakashv8900@cluster0.2r0iu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+mongo = MongoClient("mongodb+srv://username:password@cluster0.2r0iu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = mongo["myFirstDatabase"]
 col = db["users"]
 

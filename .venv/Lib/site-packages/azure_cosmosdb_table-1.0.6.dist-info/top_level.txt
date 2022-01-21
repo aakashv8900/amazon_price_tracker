@@ -1,0 +1,4 @@
+azure
+doc
+samples
+tests

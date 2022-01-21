@@ -16,7 +16,7 @@ from pymongo import MongoClient
 
 from flask import Flask
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb+srv://aakashv8900:aakashv8900@cluster0.2r0iu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+app.config['MONGO_URI'] = 'mongodb+srv://username:password@cluster0.2r0iu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 app.config['MONGO_DBNAME'] = 'myFirstDatabase'
 mongo = PyMongo(app)
 db = mongo.db

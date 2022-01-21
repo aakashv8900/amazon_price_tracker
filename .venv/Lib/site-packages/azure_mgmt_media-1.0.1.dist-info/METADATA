@@ -1,0 +1,178 @@
+Metadata-Version: 2.1
+Name: azure-mgmt-media
+Version: 1.0.1
+Summary: Microsoft Azure Media Services Client Library for Python
+Home-page: https://github.com/Azure/azure-sdk-for-python
+Author: Microsoft Corporation
+Author-email: azpysdkhelp@microsoft.com
+License: MIT License
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: msrest (>=0.5.0)
+Requires-Dist: msrestazure (<2.0.0,>=0.4.32)
+Requires-Dist: azure-common (~=1.1)
+Requires-Dist: azure-mgmt-nspkg; python_version<'3.0'
+
+Microsoft Azure SDK for Python
+==============================
+
+This is the Microsoft Azure Media Services Client Library.
+
+Azure Resource Manager (ARM) is the next generation of management APIs that
+replace the old Azure Service Management (ASM).
+
+This package has been tested with Python 2.7, 3.4, 3.5, 3.6 and 3.7.
+
+For the older Azure Service Management (ASM) libraries, see
+`azure-servicemanagement-legacy <https://pypi.python.org/pypi/azure-servicemanagement-legacy>`__ library.
+
+For a more complete set of Azure libraries, see the `azure <https://pypi.python.org/pypi/azure>`__ bundle package.
+
+
+Compatibility
+=============
+
+**IMPORTANT**: If you have an earlier version of the azure package
+(version < 1.0), you should uninstall it before installing this package.
+
+You can check the version using pip:
+
+.. code:: shell
+
+    pip freeze
+
+If you see azure==0.11.0 (or any version below 1.0), uninstall it first:
+
+.. code:: shell
+
+    pip uninstall azure
+
+
+Usage
+=====
+
+For code examples, see `Media Services
+<https://docs.microsoft.com/python/api/overview/azure/media-services>`__
+on docs.microsoft.com.
+
+
+Provide Feedback
+================
+
+If you encounter any bugs or have suggestions, please file an issue in the
+`Issues <https://github.com/Azure/azure-sdk-for-python/issues>`__
+section of the project.
+
+
+.. :changelog:
+
+Release History
+===============
+
+1.0.1 (2018-10-16)
+++++++++++++++++++
+
+**Bugfix**
+
+- Fix sdist broken in 1.0.0. No code change.
+
+1.0.0 (2018-10-03)
+++++++++++++++++++
+
+**Features**
+
+- Model JobOutput has a new parameter label
+- Model StreamingLocatorContentKey has a new parameter label_reference_in_streaming_policy
+- Model Operation has a new parameter origin
+- Model Operation has a new parameter properties
+- Model VideoAnalyzerPreset has a new parameter insights_to_extract
+- Model LiveEventInput has a new parameter access_control
+- Model JobOutputAsset has a new parameter label
+- Added operation AssetsOperations.list_streaming_locators
+- Added operation JobsOperations.update
+- Added operation group AssetFiltersOperations
+- Added operation group AccountFiltersOperations
+
+**Breaking changes**
+
+- Parameter scale_units of model StreamingEndpoint is now required
+- Model StreamingLocatorContentKey no longer has parameter label
+- Model VideoAnalyzerPreset no longer has parameter audio_insights_only
+- Model JobInput no longer has parameter label
+- Model JobInputs no longer has parameter label
+
+API version endpoint is now 2018-07-01
+
+**Note**
+
+- azure-mgmt-nspkg is not installed anymore on Python 3 (PEP420-based namespace package)
+
+1.0.0rc2 (2018-07-19)
++++++++++++++++++++++
+
+**Features**
+
+- Model LiveEventPreview has a new parameter alternative_media_id
+- Model StreamingLocator has a new parameter alternative_media_id
+- Model EnvelopeEncryption has a new parameter custom_key_acquisition_url_template
+- Model Job has a new parameter correlation_data
+
+**Breaking changes**
+
+- Model EnvelopeEncryption no longer has parameter custom_license_acquisition_url_template
+
+API version endpoint is now 2018-06-01-preview
+
+1.0.0rc1 (2018-04-23)
++++++++++++++++++++++
+
+**Disclaimer**
+
+This is a complete rewriting of the package and a completly new RestAPI,
+and no compatibility at all is possible.
+
+API version endpoint is now 2018-03-30-preview
+
+0.2.0 (2017-09-14)
+++++++++++++++++++
+
+**Bug fixes**
+
+- Fix deserialization issue with check_name_availability
+
+**Features**
+
+- Adds operations.list
+
+**Breaking changes**
+
+- Operations will now throw a ValidationError if input string is longer than 24 characters (not CloudError)
+- Some keyword arguments have been renamed "parameters"
+
+0.1.2 (2016-06-27)
+++++++++++++++++++
+
+This wheel package is built with the azure wheel extension
+
+0.1.1 (2016-12-12)
+++++++++++++++++++
+
+* Best parameters check (you might experience exception change from CloudError to TypeError)
+* Delete account operation fix (random exception)
+* Create account operation fix (random exception)
+
+0.1.0 (2016-11-07)
+++++++++++++++++++
+
+* Initial preview release
+
+

@@ -1,0 +1,26 @@
+# coding=<utf8>
+# -*- coding: utf-8 -*-
+
+import logging
+adls_logger = logging.getLogger('azure.datalake.store')
+adls_logger.addHandler(logging.FileHandler(filename="adls.log"))
+adls_logger.setLevel(logging.DEBUG)  # DEBUG produces a lot of output.
+
+from azure.datalake.store import core, lib
+
+if __name__ == '__main__':
+    #token = lib.auth(username='admin@aad179.ccsctp.net', password="D@t@!@k351", tenant_id='4ca0b6b0-e97c-43bc-aa52-48f274d2cf1a', client_id='1950a258-227b-4e31-a9cf-717495945fc2')
+    token = lib.auth() ## Fill this with how they acqure the token
+    # ADD details on how they are using the token
+    adl = core.AzureDLFileSystem(token, store_name="akharitadls")
+    folder= "concat_test"
+    acl_spec = "default:user:3883e0e8-9ad3-440d-b6f6-6ed492ae1ae7:rwx"
+    removed_default_acl_spec = ",".join([x for x in acl_spec.split(',') if not x.lower().startswith("default")])
+
+    adl.rm("/a", recursive=True)
+    adl.mkdir("/a")
+    adl.mkdir("/a/b")
+    adl.touch("a/1.txt")
+    adl.touch("a/b/1.txt")
+
+    adl.modify_acl_entries("/a", "default:user:3883e0e8-9ad3-440d-b6f6-6ed492ae1ae7:rwx,user:3883e0e8-9ad3-440d-b6f6-6ed492ae1ae7:rwx", recursive=True, number_of_sub_process=1)

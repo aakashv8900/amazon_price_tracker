@@ -1,0 +1,15 @@
+import time
+from azure.datalake.store.multithread import ADLUploader
+def abc():
+    xyz()
+
+def xyz():
+    cat()
+
+def cat():
+    time.sleep(100)
+
+abc()
+
+x = ADLUploader()
+print(x.clear_saved())

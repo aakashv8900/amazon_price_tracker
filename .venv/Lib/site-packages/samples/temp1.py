@@ -1,0 +1,46 @@
+# coding=<utf8>
+from azure.datalake.store import core, lib
+from azure.datalake.store.multithread import ADLDownloader
+import logging
+
+if __name__ == '__main__':
+    # Please fill the values under quotes till ################################### section
+    TENANT_ID = ""
+    CLIENT_ID = ""
+    CLIENT_SECRET = ""
+    ACCOUNT_NAME = "targetadlssandbox"
+    PATH_TO_DOWNLOAD = "/data_files/TGT_NSN_201904241016.zip"
+    LOG_FILE_NAME = "adls.log"
+    #####################################################################################
+
+    #Authenticate and initialize adls filesystem object
+    token = lib.auth()
+    # ADD details on how they are using the token
+    adls_client = core.AzureDLFileSystem(token, store_name="akharitadls", per_call_timeout_seconds=1)
+    # Set logging to debug
+    adls_log_handler = logging.FileHandler(filename=LOG_FILE_NAME)
+    adls_logger = logging.getLogger('azure.datalake.store')
+    adls_logger.setLevel(logging.DEBUG)
+    adls_logger.addHandler(adls_log_handler)
+
+    myfolder = '/'
+
+    adls_client.listdir(myfolder)
+    file_list = []
+    failed = []
+    for folder in adls_client.listdir(myfolder, detail=True):
+        print(folder)
+        file = folder['name']
+        try:
+            if folder['type'] == 'FILE':
+                # Asume file is at least one byte. Will fail for actual zero byte files
+
+                core._fetch_range(adls_client.azure, file, 0, 1)
+            file_list.append(file)
+        except:
+            failed.append(file)
+    print("Done")
+    print(file_list)
+    print("Failed")
+    print(failed)
+

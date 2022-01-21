@@ -1,0 +1,55 @@
+import requests
+import json
+
+def get_token_from_net():
+    CLIENT_ID1 = r"79bf2353-0aab-4b2c-8af0-d6b97f114d75"
+    CLIENT_SECRET1 = r"EHmYI14WSmKGAGIqd5rLJARRCVRu8HNBMjW+E+ozmm8="
+    TENTANT_NAME = r"72f988bf-86f1-41af-91ab-2d7cd011db47"
+    req = requests.session()
+    req.verify = False
+
+    url = r"https://login.microsoftonline.com/{0}/oauth2/token".format(TENTANT_NAME)
+
+    payload = {'client_id': CLIENT_ID1,
+               'grant_type': 'client_credentials',
+               'client_secret': CLIENT_SECRET1,
+               'resource': r'https://storage.azure.com/',
+               #'scope': 'https://storage.azure.com/.default'
+               }
+
+    x = req.post(url, data=payload)
+    with open("tokenFile.txt", "w") as f:
+        json.dump(x.json(), f)
+    return x.json()["access_token"]
+
+
+def get_token_from_file():
+    with open("tokenFile.txt", "r") as f:
+        data = json.load(f)
+        return data["access_token"]
+
+def filesystem_get():
+    access_token = get_token_from_file()
+    uri_base = "https://{accountName}.{dnsSuffix}".format(accountName="akharitsdktest", dnsSuffix="dfs.core.windows.net")
+    headers = {'Authorization': r'Bearer {access_token}'.format(access_token=access_token),
+               "x-ms-version": "2018-06-17"}
+    params = {"resource": "account"}
+    val = session.get(uri_base, params=params, headers=headers)
+    print(val.text)
+
+def get_token_from_net1():
+    CLIENT_ID1 = r"79bf2353-0aab-4b2c-8af0-d6b97f114d75"
+    CLIENT_SECRET1 = r"EHmYI14WSmKGAGIqd5rLJARRCVRu8HNBMjW+E+ozmm8="
+    TENTANT_NAME = r"72f988bf-86f1-41af-91ab-2d7cd011db47"
+    req = requests.session()
+    req.verify = False
+
+    url = r"https://login.microsoftonline.com/{0}/oauth2/authorize".format(TENTANT_NAME)
+
+    payload = {'client_id': CLIENT_ID1, 'response_type':'code'}
+
+    x =req.post(url=url, data = payload)
+    print(x.text)
+
+if __name__ == "__main__":
+    get_token_from_net1()

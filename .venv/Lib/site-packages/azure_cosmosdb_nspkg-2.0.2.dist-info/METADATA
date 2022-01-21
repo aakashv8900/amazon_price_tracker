@@ -1,0 +1,35 @@
+Metadata-Version: 2.0
+Name: azure-cosmosdb-nspkg
+Version: 2.0.2
+Summary: Microsoft Azure CosmosDB Namespace Package [Internal]
+Home-page: https://github.com/Azure/azure-cosmosdb-python
+Author: Microsoft Corporation
+Author-email: ascl@microsoft.com
+License: Apache License 2.0
+Description-Content-Type: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Dist: azure-nspkg (>=2.0.0)
+
+Microsoft Azure CosmosDB SDK for Python
+=======================================
+
+This is the Microsoft Azure CosmosDB namespace package.
+
+This package is not intended to be installed directly by the end user.
+
+It provides the necessary files for other packages to extend the azure.cosmosdb namespace.
+
+If you are looking to install the Azure CosmosDB libraries, see the
+`azure <https://pypi.python.org/pypi/azure>`__ bundle package.
+
+

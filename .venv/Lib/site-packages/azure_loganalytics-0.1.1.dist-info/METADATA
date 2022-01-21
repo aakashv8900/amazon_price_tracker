@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: azure-loganalytics
+Version: 0.1.1
+Summary: Microsoft Azure Log Analytics Client Library for Python
+Home-page: https://github.com/Azure/azure-sdk-for-python
+Author: Microsoft Corporation
+Author-email: azpysdkhelp@microsoft.com
+License: MIT License
+Platform: UNKNOWN
+Classifier: Development Status :: 7 - Inactive
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Requires-Dist: msrest (>=0.5.0)
+Requires-Dist: azure-common (~=1.1)
+Requires-Dist: azure-nspkg ; python_version<'3.0'
+
+## Microsoft Azure SDK for Python
+
+This package is no longer being maintained. Please use our latest package [azure-monitor-query](https://pypi.org/project/azure-monitor-query/).
+
+A [migration guide](https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/monitor/azure-monitor-query/migration_guide.md) has been provided for the same.
+
+![image](https://azure-sdk-impressions.azurewebsites.net/api/impressions/azure-sdk-for-python%2Fazure-loganalytics%2FREADME.png)
+
+
+# Release History
+
+## 0.1.1 (2021-11-11)
+
+* This package is no longer maintained. Please use https://pypi.org/project/azure-monitor-query/
+
+## 0.1.0 (2018-07-11)
+
+* Initial Release
+
+

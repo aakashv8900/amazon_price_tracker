@@ -1,0 +1,9 @@
+# coding=<utf8>
+from azure.datalake.store import core, lib
+
+if __name__ == '__main__':
+    token = lib.auth()
+    # ADD details on how they are using the token
+    adl = core.AzureDLFileSystem(token, store_name="akharitadls")
+    root = "/manyFiles/a/"
+    print(len(adl.ls(root)))

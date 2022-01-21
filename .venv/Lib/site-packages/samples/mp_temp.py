@@ -1,0 +1,26 @@
+import multiprocessing as mp
+import os
+
+class cl:
+    def __init__(self):
+        self.x = 1
+
+    def set(self):
+        self.x = os.getpid()
+
+    def __str__(self):
+        return str(self.x)
+
+def run(a):
+    a.set()
+    print("Current pid, ", os.getpid(), a)
+    print(a)
+
+
+if __name__ == "__main__":
+    a = cl()
+    print("Current pid", os.getpid())
+    p = mp.Process(target=run, args=(a,))
+    p.start()
+    p.join()
+    print(a)

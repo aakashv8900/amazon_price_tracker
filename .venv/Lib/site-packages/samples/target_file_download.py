@@ -1,0 +1,28 @@
+# coding=<utf8>
+from azure.datalake.store import core, lib
+from azure.datalake.store.multithread import ADLDownloader
+import logging
+
+if __name__ == '__main__':
+    # Please fill the values under quotes till ################################### section
+    TENANT_ID = ""
+    CLIENT_ID = ""
+    CLIENT_SECRET = ""
+    ACCOUNT_NAME = "targetadlssandbox"
+    PATH_TO_DOWNLOAD = "/data_files/TGT_NSN_201904241016.zip"
+    LOG_FILE_NAME = "adls.log"
+    #####################################################################################
+
+    #Authenticate and initialize adls filesystem object
+    token = lib.auth(tenant_id=TENANT_ID, client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
+    adlfs = core.AzureDLFileSystem(token, store_name=ACCOUNT_NAME) # Add name of account
+    # Set logging to debug
+    adls_log_handler = logging.FileHandler(filename=LOG_FILE_NAME)
+    adls_logger = logging.getLogger('azure.datalake.store')
+    adls_logger.setLevel(logging.DEBUG)
+    adls_logger.addHandler(adls_log_handler)
+    # Print file info to check file size etc.
+    print(adlfs.info(path=PATH_TO_DOWNLOAD))
+    # Download the file to current directory
+    ADLDownloader(adlfs, PATH_TO_DOWNLOAD, "./")
+
